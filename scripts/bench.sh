@@ -2,6 +2,6 @@
 
 set -euo pipefail
 
-cargo bench
+docker run --rm -v "$(pwd):/app" -w /app rust cargo bench
 
 windtunnel-cli report -f criterion-rust .
